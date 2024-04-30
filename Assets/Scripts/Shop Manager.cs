@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
+
     public int[,] shopItems = new int[4, 4];
     public float coins;
     public TextMeshProUGUI coinsTXT;
@@ -20,6 +21,7 @@ public class ShopManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         coinsTXT.text = "Coins: " + coins.ToString();
 
         //ID's
@@ -50,6 +52,7 @@ public class ShopManager : MonoBehaviour
         {
             coins -= shopItems[2, buttonRef.GetComponent<ButtonInfo>().itemID];
             shopItems[3, buttonRef.GetComponent<ButtonInfo>().itemID]++;
+
             coinsTXT.text = "Coins: " + coins.ToString();
             buttonRef.GetComponent<ButtonInfo>().quantityTXT.text = shopItems[3, buttonRef.GetComponent<ButtonInfo>().itemID].ToString();
         }
